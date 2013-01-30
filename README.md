@@ -1,6 +1,6 @@
 # Micron
 
-A Ruby library to controll Alesis micron using MIDI
+A Ruby library to control Alesis micron using MIDI
 
 ## Supported Instruments
 
