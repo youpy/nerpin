@@ -1,6 +1,6 @@
 require File.expand_path(File.dirname(__FILE__) + '/../spec_helper')
 
-include Micron
+include Nerpin
 
 describe Nrpn do
   subject do

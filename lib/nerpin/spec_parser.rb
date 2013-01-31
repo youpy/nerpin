@@ -1,7 +1,7 @@
 require 'nokogiri'
 require 'open-uri'
 
-module Micron
+module Nerpin
   class SpecParser
     SPEC_URL = 'http://ion-micron-miniak.wikia.com/wiki/Common_FAQ'
 

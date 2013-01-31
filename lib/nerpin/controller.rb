@@ -1,4 +1,4 @@
-module Micron
+module Nerpin
   class Controller
     def initialize(destination)
       @destination = destination

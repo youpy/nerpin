@@ -1,6 +1,6 @@
 require 'json'
 
-module Micron
+module Nerpin
   class Nrpn
     attr_reader :id, :key, :min, :max
 
@@ -30,7 +30,7 @@ module Micron
       value(rand(min.abs + max + (min < 0 ? 2 : 1)) - min.abs - (min < 0 ? 1 : 0))
     end
 
-    # ruby -rmicron -rjson -e "puts JSON.pretty_generate(Micron::SpecParser.parse)"
+    # ruby -rnerpin -rjson -e "puts JSON.pretty_generate(Nerpin::SpecParser.parse)"
     data = JSON.parse(open(File.dirname(File.expand_path(__FILE__)) + '/../../data/nrpn/micron.json').read)
 
     NRPN = Hash[
