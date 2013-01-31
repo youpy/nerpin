@@ -1,6 +1,6 @@
-# Micron
+# Nerpin
 
-A Ruby library to control Alesis micron using MIDI
+A Ruby library to send manufacturer-specific or instrument-specific MIDI messages
 
 ## Supported Instruments
 
@@ -12,7 +12,7 @@ A Ruby library to control Alesis micron using MIDI
 
 Add this line to your application's Gemfile:
 
-    gem 'micron'
+    gem 'nerpin'
 
 And then execute:
 
@@ -20,16 +20,16 @@ And then execute:
 
 Or install it yourself as:
 
-    $ gem install micron
+    $ gem install nerpin
 
 ## Usage
 
 ```ruby
 require 'coremidi'
-require 'micron'
+require 'nerpin'
 
 destination = CoreMIDI::Destination.first
-micron = Micron::Controller.new(destination)
+micron = Nerpin::Micron(destination)
 
 micron.oscillator_1_octave(3)
 ```
