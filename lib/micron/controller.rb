@@ -7,10 +7,10 @@ module Micron
     def puts(id, value)
       mutex.synchronize do
         [
-          [0x63, id / 128],
-          [0x62, id % 128],
-          [0x06, (value >= 0) ? value / 128 : 127 - (value.abs / 128)],
-          [0x26, (value >= 0) ? value % 128 : 128 - (value.abs % 128)]
+          [0x63, (id >> 7) & 0b1111111],
+          [0x62, id        & 0b1111111],
+          [0x06, value[:v0x06]],
+          [0x26, value[:v0x26]]
         ].each do |message|
           @destination.puts(0b10110000, message[0], message[1])
         end
@@ -25,7 +25,7 @@ module Micron
 
     def method_missing(name, *args)
       if nrpn = Nrpn.find_by_key(name)
-        puts(nrpn.id, args.first)
+        puts(nrpn.id, nrpn.value(args.first))
       else
         super
       end

@@ -22,11 +22,11 @@ module Micron
             join('_').
             to_sym
 
-          result[key] = [
-            id.to_i,
-            min.to_i,
-            max.to_i,
-          ]
+          result[key] = {
+            :id  => id.to_i,
+            :min => min.to_i,
+            :max => max.to_i
+          }
         end
 
         result

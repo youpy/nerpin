@@ -12,20 +12,29 @@ describe Controller do
   end
 
   it 'controls the pitch of oscillator 1 with 999' do
-    subject.should_receive(:puts).with(15, 999)
+    subject.should_receive(:puts).with(15, :v0x06 => 7, :v0x26 => 103)
 
     subject.oscillator_1_pitch(999)
   end
 
   describe '#puts' do
+    it 'sends message with specified value to the destination' do
+      @destination.should_receive(:puts).with(0b10110000, 99, anything())
+      @destination.should_receive(:puts).with(0b10110000, 98, anything())
+      @destination.should_receive(:puts).with(0b10110000, 6,  5)
+      @destination.should_receive(:puts).with(0b10110000, 38, 123)
+
+      subject.puts(15, :v0x06 => 5, :v0x26 => 123)
+    end
+
     context 'nrpn is lower than 128' do
       it 'sends message to the destination' do
         @destination.should_receive(:puts).with(0b10110000, 99, 0)
         @destination.should_receive(:puts).with(0b10110000, 98, 15)
-        @destination.should_receive(:puts).with(0b10110000, 6,  0)
-        @destination.should_receive(:puts).with(0b10110000, 38, 0)
+        @destination.should_receive(:puts).with(0b10110000, 6,  anything())
+        @destination.should_receive(:puts).with(0b10110000, 38, anything())
 
-        subject.puts(15, 0)
+        subject.puts(15, :v0x06 => 0, :v0x26 => 0)
       end
     end
 
@@ -36,40 +45,7 @@ describe Controller do
         @destination.should_receive(:puts).with(0b10110000, 6,  anything())
         @destination.should_receive(:puts).with(0b10110000, 38, anything())
 
-        subject.puts(182, 0)
-      end
-    end
-
-    context 'zero value' do
-      it 'sends message to the destination' do
-        @destination.should_receive(:puts).with(0b10110000, 99, anything())
-        @destination.should_receive(:puts).with(0b10110000, 98, anything())
-        @destination.should_receive(:puts).with(0b10110000, 6,  0)
-        @destination.should_receive(:puts).with(0b10110000, 38, 0)
-
-        subject.puts(15, 0)
-      end
-    end
-
-    context 'positive value' do
-      it 'sends message to the destination' do
-        @destination.should_receive(:puts).with(0b10110000, 99, anything())
-        @destination.should_receive(:puts).with(0b10110000, 98, anything())
-        @destination.should_receive(:puts).with(0b10110000, 6,  1)
-        @destination.should_receive(:puts).with(0b10110000, 38, 15)
-
-        subject.puts(15, 143)
-      end
-    end
-
-    context 'negative value' do
-      it 'sends message to the destination' do
-        @destination.should_receive(:puts).with(0b10110000, 99, anything())
-        @destination.should_receive(:puts).with(0b10110000, 98, anything())
-        @destination.should_receive(:puts).with(0b10110000, 6,  126)
-        @destination.should_receive(:puts).with(0b10110000, 38, 113)
-
-        subject.puts(15, -143)
+        subject.puts(182, :v0x06 => 0, :v0x26 => 0)
       end
     end
   end
