@@ -18,6 +18,10 @@ module Nerpin
       end
     end
 
+    def nrpns
+      @nrpn_class.instance_variable_get('@nrpns')
+    end
+
     private
 
     def mutex

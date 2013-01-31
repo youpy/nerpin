@@ -49,4 +49,11 @@ describe Controller do
       end
     end
   end
+
+  describe '#nrpns' do
+    it 'return NRPNs' do
+      subject.nrpns.size.should eql(234)
+      subject.nrpns.values.first.should be_a_kind_of(Nrpn::Base)
+    end
+  end
 end
