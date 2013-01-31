@@ -8,7 +8,7 @@ describe Controller do
   end
 
   subject do
-    Controller.new(@destination)
+    Controller.new(@destination, Nrpn::Micron)
   end
 
   it 'controls the pitch of oscillator 1 with 999' do

@@ -2,8 +2,8 @@ require File.expand_path(File.dirname(__FILE__) + '/../spec_helper')
 
 include Nerpin
 
-describe SpecParser do
-  describe '.parse' do
+describe Util do
+  describe '.parse_spec_for_micron' do
     before do
       @url = 'http://ion-micron-miniak.wikia.com/wiki/Common_FAQ'
 
@@ -12,7 +12,7 @@ describe SpecParser do
     end
 
     it 'parses the spec for NRPN' do
-      parsed = SpecParser.parse
+      parsed = Util.parse_spec_for_micron
 
       parsed.should be_an_instance_of(Hash)
       parsed.size.should eql(234)

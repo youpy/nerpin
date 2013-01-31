@@ -1,10 +1,10 @@
-require File.expand_path(File.dirname(__FILE__) + '/../spec_helper')
+require File.expand_path(File.dirname(__FILE__) + '/../../spec_helper')
 
-include Nerpin
+include Nerpin::Nrpn
 
-describe Nrpn do
+describe Micron do
   subject do
-    Nrpn.new(15, :oscillator_1_pitch, -999, 999)
+    Micron.new(15, :oscillator_1_pitch, -999, 999)
   end
 
   its(:id)  { should eql(15) }
@@ -14,13 +14,13 @@ describe Nrpn do
 
   describe '.find_by_key' do
     it 'finds NRPN by key' do
-      Nrpn.find_by_key(:oscillator_1_pitch).should be_an_instance_of(Nrpn)
+      Micron.find_by_key(:oscillator_1_pitch).should be_an_instance_of(Micron)
     end
   end
 
   describe '#initialize' do
     it 'instantiates' do
-      subject.should be_an_instance_of(Nrpn)
+      subject.should be_an_instance_of(Micron)
     end
   end
 

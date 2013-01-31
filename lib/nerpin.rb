@@ -1,8 +1,11 @@
 require "nerpin/nrpn"
+require "nerpin/nrpn/micron"
 require "nerpin/controller"
-require "nerpin/spec_parser"
+require "nerpin/util"
 require "nerpin/version"
 
 module Nerpin
-  # Your code goes here...
+  def Micron(destination)
+    Controller.new(destination, Nrpn::Micron)
+  end
 end
