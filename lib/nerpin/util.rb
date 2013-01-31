@@ -3,6 +3,7 @@ require 'open-uri'
 
 module Nerpin
   module Util
+    # ruby -rnerpin -rjson -e "puts JSON.pretty_generate(Nerpin::Util.parse_spec_for_micron)"
     def self.parse_spec_for_micron
       spec_url = 'http://ion-micron-miniak.wikia.com/wiki/Common_FAQ'
       doc      = Nokogiri::HTML(open(spec_url))

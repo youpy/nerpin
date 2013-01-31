@@ -13,7 +13,6 @@ module Nerpin
         def nrpns
           return @nrpns if @nrpns
 
-          # ruby -rnerpin -rjson -e "puts JSON.pretty_generate(Nerpin::SpecParser.parse)"
           data = JSON.parse(
             open(
               File.dirname(
