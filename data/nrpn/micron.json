@@ -812,7 +812,7 @@
   "patch_cable_1_source": {
     "id": 180,
     "min": 0,
-    "max": 77
+    "max": 37
   },
   "patch_cable_1_destination": {
     "id": 181,
@@ -832,7 +832,7 @@
   "patch_cable_2_source": {
     "id": 184,
     "min": 0,
-    "max": 114
+    "max": 37
   },
   "patch_cable_2_destination": {
     "id": 185,
@@ -852,7 +852,7 @@
   "patch_cable_3_source": {
     "id": 188,
     "min": 0,
-    "max": 114
+    "max": 37
   },
   "patch_cable_3_destination": {
     "id": 189,
@@ -872,7 +872,7 @@
   "patch_cable_4_source": {
     "id": 192,
     "min": 0,
-    "max": 114
+    "max": 37
   },
   "patch_cable_4_destination": {
     "id": 193,
@@ -892,7 +892,7 @@
   "patch_cable_5_source": {
     "id": 196,
     "min": 0,
-    "max": 114
+    "max": 37
   },
   "patch_cable_5_destination": {
     "id": 197,
@@ -912,7 +912,7 @@
   "patch_cable_6_source": {
     "id": 200,
     "min": 0,
-    "max": 114
+    "max": 37
   },
   "patch_cable_6_destination": {
     "id": 201,
@@ -932,7 +932,7 @@
   "patch_cable_7_source": {
     "id": 204,
     "min": 0,
-    "max": 114
+    "max": 37
   },
   "patch_cable_7_destination": {
     "id": 205,
@@ -952,7 +952,7 @@
   "patch_cable_8_source": {
     "id": 208,
     "min": 0,
-    "max": 114
+    "max": 37
   },
   "patch_cable_8_destination": {
     "id": 209,
@@ -972,7 +972,7 @@
   "patch_cable_9_source": {
     "id": 212,
     "min": 0,
-    "max": 114
+    "max": 37
   },
   "patch_cable_9_destination": {
     "id": 213,
@@ -992,7 +992,7 @@
   "patch_cable_10_source": {
     "id": 216,
     "min": 0,
-    "max": 114
+    "max": 37
   },
   "patch_cable_10_destination": {
     "id": 217,
@@ -1012,7 +1012,7 @@
   "patch_cable_11_source": {
     "id": 220,
     "min": 0,
-    "max": 114
+    "max": 37
   },
   "patch_cable_11_destination": {
     "id": 221,
@@ -1032,7 +1032,7 @@
   "patch_cable_12_source": {
     "id": 224,
     "min": 0,
-    "max": 114
+    "max": 37
   },
   "patch_cable_12_destination": {
     "id": 225,
@@ -1106,23 +1106,23 @@
   },
   "fx2_param_a": {
     "id": 246,
-    "min": -32768,
-    "max": 32767
+    "min": 0,
+    "max": 340
   },
   "fx2_param_b": {
     "id": 247,
-    "min": -32768,
-    "max": 32767
+    "min": 0,
+    "max": 100
   },
   "fx2_param_c": {
     "id": 248,
-    "min": -32768,
-    "max": 32767
+    "min": 0,
+    "max": 100
   },
   "fx2_param_d": {
     "id": 249,
-    "min": -32768,
-    "max": 32767
+    "min": 0,
+    "max": 100
   },
   "fx_param_a_synced": {
     "id": 250,
