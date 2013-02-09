@@ -1,5 +1,3 @@
-require 'json'
-
 module Nerpin
   module Nrpn
     class Micron < Base
