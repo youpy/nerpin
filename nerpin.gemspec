@@ -3,7 +3,7 @@
 require File.expand_path('lib/nerpin/version', __dir__)
 
 Gem::Specification.new do |gem|
-  gem.required_ruby_version = '~> 2.0'
+  gem.required_ruby_version = '>= 2.0'
 
   gem.authors       = ['youpy']
   gem.email         = ['9128+youpy@users.noreply.github.com']
