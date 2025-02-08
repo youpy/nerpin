@@ -1,19 +1,13 @@
-require "nerpin/nrpn"
-require "nerpin/nrpn/micron"
-require "nerpin/controller"
-require "nerpin/util"
-require "nerpin/version"
+require 'nerpin/nrpn'
+require 'nerpin/nrpn/micron'
+require 'nerpin/controller'
+require 'nerpin/util'
+require 'nerpin/version'
 
 module Nerpin
-  ObjectSpace.each_object(class << Nrpn::Base; self; end) do |m|
-    if m != Nrpn::Base
-      name = m.name.split(/::/).last.to_sym
-
-      define_method(name) do |destination|
-        Controller.new(destination, m)
-      end
-
-      module_function name
-    end
+  def Micron(destination) # rubocop:disable Naming/MethodName
+    Controller.new(destination, Nerpin::Nrpn::Micron)
   end
+
+  module_function :Micron
 end

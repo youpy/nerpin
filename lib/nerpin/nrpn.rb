@@ -14,18 +14,17 @@ module Nerpin
           return @nrpns if @nrpns
 
           data = JSON.parse(
-            open(
+            File.read(
               File.dirname(
                 File.expand_path(__FILE__)
-              ) + '/../../data/nrpn/%s.json' % self.name.split(/::/).last.downcase
-            ).read
+              ) + "/../../data/nrpn/#{name.split('::').last.downcase}.json"
+            )
           )
 
-          @nrpns = Hash[
+          @nrpns =
             data.map do |k, v|
               [k.to_sym, new(v['id'], k.to_sym, v['min'], v['max'])]
-            end
-          ].freeze
+            end.to_h.freeze
         end
       end
 
@@ -36,7 +35,7 @@ module Nerpin
         @max = max
       end
 
-      def value(value)
+      def value(_value)
         raise 'subclass must override this'
       end
 

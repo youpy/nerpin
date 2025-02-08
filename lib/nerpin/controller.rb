@@ -28,8 +28,12 @@ module Nerpin
       @mutex ||= Mutex.new
     end
 
+    def respond_to_missing?(sym, _include_private)
+      !!@nrpn_class.find_by_key(sym)
+    end
+
     def method_missing(name, *args)
-      if nrpn = @nrpn_class.find_by_key(name)
+      if (nrpn = @nrpn_class.find_by_key(name))
         puts(nrpn.id, nrpn.value(args.first))
       else
         super
