@@ -1,4 +1,4 @@
-# Nerpin [![Build Status](https://travis-ci.org/youpy/nerpin.png?branch=master)](https://travis-ci.org/youpy/nerpin)
+# Nerpin [![Ruby](https://github.com/youpy/nerpin/actions/workflows/ruby.yml/badge.svg)](https://github.com/youpy/nerpin/actions/workflows/ruby.yml)
 
 A Ruby library to send manufacturer-specific or instrument-specific MIDI messages
 
