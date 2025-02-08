@@ -12,6 +12,7 @@ module Nerpin
 
     it 'controls the pitch of oscillator 1 with 999' do
       subject.should_receive(:puts).with(15, v0x06: 7, v0x26: 103)
+      subject.respond_to?(:oscillator_1_pitch).should be_true
 
       subject.oscillator_1_pitch(999)
     end
