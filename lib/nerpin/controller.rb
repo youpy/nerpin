@@ -19,7 +19,7 @@ module Nerpin
     end
 
     def nrpns
-      @nrpn_class.instance_variable_get('@nrpns')
+      @nrpn_class.nrpns
     end
 
     private
