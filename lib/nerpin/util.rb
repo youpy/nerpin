@@ -7,14 +7,14 @@ module Nerpin
     def self.parse_spec_for_micron
       spec_url = 'http://ion-micron-miniak.wikia.com/wiki/Common_FAQ'
       doc      = Nokogiri::HTML(URI.parse(spec_url).open)
-      table    = doc.xpath('//table').last
+      table    = doc.css('table').last
 
-      table.xpath('tr').drop(1).each_with_object({}) do |tr, result|
-        _, id, key, min, max = tr.children.map do |el|
+      table.css('tr').drop(1).each_with_object({}) do |tr, result|
+        id, key, min, max = tr.css('td').children.map do |el|
           el.text.strip
         end
 
-        next if key.empty?
+        next if key.nil?
 
         key = key.downcase
                  .gsub('-', 'minus')
